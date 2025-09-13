@@ -2,13 +2,10 @@
 
 namespace App\Enums;
 
-class AdminRoles
-{
-    /**
-     * Create a new class instance.
-     */
-    public function __construct()
-    {
-        //
-    }
+enum AdminRoles : string{
+    case Admin = "Admin";
+    case Doctor = "Doctor";
+    case Reception = "Reception";
+    case Nurse = "Nurse";
+    case Staff = "Staff";
 }
