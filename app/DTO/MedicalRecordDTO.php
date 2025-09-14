@@ -4,7 +4,7 @@ namespace App\DTO;
 
 use App\Models\medicalRecord;
 
-class MedicalRecordDTO
+class MedicalRecordDTO extends baseDTO
 {
     /**
      * Create a new class instance.
@@ -35,7 +35,7 @@ class MedicalRecordDTO
         $this->dateTime = $dateTime;
     }
 
-    public function fromModel(medicalRecord $data)
+    public static function fromModel(medicalRecord $data)
     {
         return new self(
             $data->record_id,
@@ -48,7 +48,7 @@ class MedicalRecordDTO
         );
     }
 
-    public function fromArray(array $data)
+    public  static function fromArray(array $data)
     {
         return new self(
             $data['id'],

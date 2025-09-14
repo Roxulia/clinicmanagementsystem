@@ -90,4 +90,17 @@ class AdminRepo
             throw new UserNotFound();
         }
     }
+
+    public function getByRoles(string $role)
+    {
+        $data = admins::where('role',$role)->get();
+        if($data)
+        {
+            $data->getCollection()->transform(function($item){
+                return AdminDTO::fromModel($item);
+            });
+            return $data->toArray();
+        }
+        return [];
+    }
 }
