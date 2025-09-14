@@ -4,7 +4,7 @@ namespace App\DTO;
 
 use App\Models\patients;
 
-class PatientDTO
+class PatientDTO extends baseDTO
 {
     /**
      * Create a new class instance.
@@ -29,7 +29,7 @@ class PatientDTO
         $this->phno = $phno;
     }
 
-    public function fromModel(patients $data)
+    public static function fromModel(patients $data)
     {
         return new self(
             $data->patient_id,
@@ -40,7 +40,7 @@ class PatientDTO
         );
     }
 
-    public function fromArray(array $data)
+    public static function fromArray(array $data)
     {
         return new self(
             $data['id'],

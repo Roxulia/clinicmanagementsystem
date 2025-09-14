@@ -4,7 +4,7 @@ namespace App\DTO;
 
 use App\Models\perscriptions;
 
-class PerscriptionDTO
+class PerscriptionDTO extends baseDTO
 {
     /**
      * Create a new class instance.
@@ -32,7 +32,7 @@ class PerscriptionDTO
         $this -> cost = $cost;
     }
 
-    public function fromModel(perscriptions $data)
+    public static function fromModel(perscriptions $data)
     {
         return new self(
             $data->perscription_id,
@@ -44,7 +44,7 @@ class PerscriptionDTO
         );
     }
 
-    public function fromArray(array $data)
+    public static function fromArray(array $data)
     {
         return new self(
             $data['id'],

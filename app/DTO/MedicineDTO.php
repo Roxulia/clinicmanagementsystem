@@ -29,7 +29,7 @@ class MedicineDTO extends baseDTO
         $this->price = $price;
     }
 
-    public function fromModel(medicines $data)
+    public static function fromModel(medicines $data)
     {
         return new self(
             $data->medicine_id,
@@ -40,7 +40,7 @@ class MedicineDTO extends baseDTO
         );
     }
 
-    public function fromArray(array $data)
+    public static function fromArray(array $data)
     {
         return new self(
             $data['id'],
